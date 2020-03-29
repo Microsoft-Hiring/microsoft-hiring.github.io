@@ -1,0 +1,6 @@
+# Ignore all logfiles and tempfiles and generated files
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor

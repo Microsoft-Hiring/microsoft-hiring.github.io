@@ -1,0 +1,48 @@
+<script type="text/javascript"> 
+  if (window.location.hostname.includes("wuyou")){ // dev env
+    //baidu
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?03b31fa4b308702daf4d73a4de626012";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+
+
+    //google 
+    (function() {
+      var g = document.createElement("script");
+      g.src = "https://www.googletagmanager.com/gtag/js?id=UA-161837921-1";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(g, s);
+    })(); 
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-161837921-1'); 
+  }
+
+  if (window.location.hostname.includes("microsoft")){ //prod env
+    //baidu
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?028765141aec51cadd7814d0632ca80e";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+
+    //google 
+    (function() {
+      var g = document.createElement("script");
+      g.src = "https://www.googletagmanager.com/gtag/js?id=UA-161837921-2";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(g, s);
+    })(); 
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-161837921-2'); 
+  }
+</script> 

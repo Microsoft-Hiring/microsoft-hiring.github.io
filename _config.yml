@@ -1,0 +1,19 @@
+title      : 微软内推
+lang       : zh
+description: 你需要的都在这里!
+copyright  : © 2019 - 2020 Microsoft Hiring All Rights Reserved
+
+nav:
+ - name: 首页
+   link: /index.html
+ - name: 目录
+   link: /pages/menu.html
+ - name: 职位
+   link: /pages/open-jobs.html
+ - name: 资源
+   link: /pages/resources.html
+
+exclude:
+- Gemf*
+- _config*
+- docker*

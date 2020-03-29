@@ -1,0 +1,87 @@
+<!doctype html> <html lang="{{ page.lang | default: site.lang }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="icon" href="/assets/img/microsoft_logo.jpg" type="image/x-icon" title="scottcgi">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    
+    <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title> {{ site.title | default: site.github.repository_name }} - {{ page.description | default: site.description }} </title> 
+    <style>
+      div#toc {
+        border: 1px solid #aaa;
+        min-width: 300px;
+        margin-bottom: 15px;
+        padding: 10px;
+        display: inline-block !important; 
+      }
+
+      div#toc ul{ 
+        margin-bottom: 0px;
+
+      } 
+    </style>
+
+    <script type="text/javascript"> 
+      document.addEventListener('DOMContentLoaded', function(event) {
+        var links = document.getElementsByTagName("a");
+        for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+           if (links[i].hostname != window.location.hostname) {
+              links[i].target = '_blank';
+           }
+        }
+      })
+    </script> 
+    
+  </head>
+  <body>
+    <div class="wrapper">
+      <header {% unless site.description or site.github.project_tagline %} class="without-description" {% endunless %}>
+        <h1> <img src="/assets/img/microsoft_logo.jpg" style="height: 18px;"> 
+        {{ site.title | default: site.github.repository_name }}
+        </h1> 
+        <p>{{ page.description | default: site.description }}</p>
+       
+        <ul>
+        {% for item in site.nav %}
+          {% if page.url == item.link %}
+            <li style="background-color:#069">
+              <a href="{{ item.link }}">
+                <strong>{{ item.name }}</strong>
+              </a>
+            </li>
+          {% else %}
+            <li><a href="{{ item.link }}">{{ item.name }}</a></li>
+          {% endif %}
+        {% endfor %}
+        </ul>
+      </header>
+      <section>
+
+      {% if "NOTOC" == page.toc %}
+        <!-- page no toc -->
+      {% else %}
+        <div id="toc">
+          <b>导读目录:</b>
+          {% include toc.html html=content %} 
+        </div>
+      {% endif %} 
+
+      {{ content }} 
+      </section>
+
+
+    </div>
+    
+    <footer>
+      <p>{{ site.copyright | default: "copyright not found in _config.yml" }}</p>
+    </footer>
+    
+    <!--[if !IE]><script>fixScale(document);</script><![endif]--> 
+
+    {% include data.html %} 
+  </body>
+
+</html>
