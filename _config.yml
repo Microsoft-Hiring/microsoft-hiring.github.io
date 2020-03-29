@@ -17,3 +17,4 @@ exclude:
 - Gemf*
 - _config*
 - docker*
+- *.sh
